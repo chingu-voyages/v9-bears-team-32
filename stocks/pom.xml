@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<start-class>src.main.java.com.chingu.stocks.DemoApplication</start-class>
 	</properties>
 
 	<dependencies>
