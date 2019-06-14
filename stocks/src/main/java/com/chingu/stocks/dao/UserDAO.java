@@ -9,13 +9,14 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public class UserDAO {
+public class UserDAO implements UserDAOInterface {
   private EntityManager entityManager;
 
   public UserDAO (EntityManager theEntityManager) {
     entityManager = theEntityManager;
   }
-
+  
+  @Override
   @Transactional
   public void saveUser(User user) {
     Session currentSession = entityManager.unwrap(Session.class);
