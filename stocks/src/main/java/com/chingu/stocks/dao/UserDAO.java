@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public class UserDAO implements UserDAOInterface {
+public class UserDAO {
   private EntityManager entityManager;
 
   public UserDAO (EntityManager theEntityManager) {
