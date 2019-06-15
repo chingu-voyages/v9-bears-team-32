@@ -25,7 +25,7 @@
 .c-Login__button {
   display: block;
   padding: .5em 1em;
-  width: 150px;
+  width: $defaultInputWidth;
   margin: 1em auto;
   margin-bottom: .5em;
   background-color: $accentOrange;

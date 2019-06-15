@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { postAjax } from '../../shared/helpers';
 import './Login.scss';
 
-function Login() {
+function Login(): JSX.Element {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 

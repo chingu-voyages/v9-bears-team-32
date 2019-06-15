@@ -10,6 +10,9 @@ $accentOrangeLighter: #f4cc5f;
 // Fonts
 $font1: sans-serif;
 
+// Important Styles
+$defaultInputWidth: 150px;
+
 // Global Classes
 .Global-max-width {
   max-width: 1280px;
@@ -20,7 +23,7 @@ $font1: sans-serif;
   padding: .35em .5em;
   border-radius: 3px;
   border: 0;
-  width: 150px;
+  width: $defaultInputWidth;
   background-color: $bgBlue;
   border: 1px solid $bgBlue;
   color: white;
