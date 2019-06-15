@@ -1,0 +1,52 @@
+@import '../../globals';
+
+.c-Login__wrapper {
+  width: 90vw;
+  margin: 1em auto;
+  background-color: $darkBlue;
+  padding: 1em;
+}
+
+.c-Login__heading {
+  text-align: center;
+}
+
+.c-Login__inputs-wrap {
+  margin: auto;
+  width: 150px;
+}
+
+.c-Login__label {
+  margin-bottom: .25em;
+  margin-top: .25em;
+  font-size: 1em;
+}
+
+.c-Login__button {
+  display: block;
+  padding: .5em 1em;
+  width: 150px;
+  margin: 1em auto;
+  margin-bottom: .5em;
+  background-color: $accentOrange;
+  border: 0;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accentOrangeLighter;
+  }
+}
+
+.c-Login__no-account {
+  color: $accentBlue;
+  cursor: pointer;
+  font-size: .95em;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

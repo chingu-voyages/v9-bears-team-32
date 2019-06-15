@@ -1,0 +1,33 @@
+// Colors
+$bgBlue: #464b54;
+$darkBlue: #33363a;
+
+$accentGreen: #50e56d;
+$accentBlue: #4db3f2;
+$accentOrange: #e0b84a;
+$accentOrangeLighter: #f4cc5f;
+
+// Fonts
+$font1: sans-serif;
+
+// Global Classes
+.Global-max-width {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.Global-input {
+  padding: .35em .5em;
+  border-radius: 3px;
+  border: 0;
+  width: 150px;
+  background-color: $bgBlue;
+  border: 1px solid $bgBlue;
+  color: white;
+  outline: none;
+  box-sizing: border-box;
+
+  &:focus {
+    border: 1px solid $accentBlue;
+  }
+}
