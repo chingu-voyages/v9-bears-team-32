@@ -6,7 +6,7 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const login = async () => await postAjax('/login', JSON.stringify({username,password}));
+  const login = async () => await postAjax('/login', JSON.stringify({username, password}));
 
   return (
     <div className="Global-max-width c-Login__wrapper">

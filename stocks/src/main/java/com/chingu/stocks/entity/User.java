@@ -53,7 +53,7 @@ public class User {
     this.enabled = 1;
   }
 
-  public String getUsername() {
+  	public String getUsername() {
 		return this.username;
 	}
 
@@ -61,7 +61,7 @@ public class User {
 		this.username = username;
   }
 
-  public String getPassword() {
+	public String getPassword() {
 		return this.password;
 	}
 
@@ -69,7 +69,7 @@ public class User {
 		this.password = password;
 	}
 
-  public String getDisplayName() {
+	public String getDisplayName() {
 		return this.displayName;
 	}
 
@@ -77,7 +77,7 @@ public class User {
 		this.displayName = displayName;
   }
 
-  public String getEmail() {
+	public String getEmail() {
 		return this.email;
 	}
 
@@ -85,7 +85,7 @@ public class User {
 		this.email = email;
   }
 
-  public int getCash() {
+	public int getCash() {
 		return this.cash;
 	}
 
@@ -93,7 +93,7 @@ public class User {
 		this.cash = cash;
   }
 
-  public int getInvestedBalance() {
+	public int getInvestedBalance() {
 		return this.investedBalance;
 	}
 
@@ -101,7 +101,7 @@ public class User {
 		this.investedBalance = investedBalance;
   }
 
-  public byte getEnabled() {
+	public byte getEnabled() {
 		return this.enabled;
 	}
 
