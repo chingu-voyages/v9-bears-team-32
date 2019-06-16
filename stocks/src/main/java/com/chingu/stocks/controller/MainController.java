@@ -10,19 +10,9 @@ import com.chingu.stocks.entity.User;
 @Controller
 public class MainController {
 
-  UserDAO userDao;
-
-  @Autowired
-  public MainController(UserDAO theUserDao) {
-    userDao = theUserDao;
-  }
-
-  @GetMapping({"/", "/login"})
+  @GetMapping({"/", "/login", "/register"})
   public String homePage() {
-
-    User user = new User("test","testpass","display","emailtest",100,100);
-    userDao.saveUser(user);
-
     return "index";
   }
+
 }

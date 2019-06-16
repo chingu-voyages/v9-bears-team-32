@@ -41,15 +41,13 @@ public class User {
   public User(String username,
               String password,
               String displayName,
-              String email,
-              int cash,
-              int investedBalance) {
+              String email) {
     this.username = username;
     this.password = password;
     this.displayName = displayName;
     this.email = email;
-    this.cash = cash;
-    this.investedBalance = investedBalance;
+    this.cash = 10000;
+    this.investedBalance = 0;
     this.enabled = 1;
   }
 

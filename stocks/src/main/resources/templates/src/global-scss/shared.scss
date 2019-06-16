@@ -21,3 +21,16 @@
     border: 1px solid $accentBlue;
   }
 }
+
+.Global-link {
+  a {
+    color: $accentBlue;
+    cursor: pointer;
+    font-size: .85em;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

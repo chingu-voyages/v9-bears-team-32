@@ -6,15 +6,26 @@ import { Link } from 'react-router-dom';
 import { postAjax } from '../../shared/helpers';
 import '../../global-scss/sections/credentials.scss';
 
-function Login(): JSX.Element {
+
+function Register(): JSX.Element {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPass, setConfirmPass] = useState('');
+  const [displayName, setDisplayName] = useState('');
+  const [email, setEmail] = useState('');
 
-  const login = async () => await postAjax('/login', JSON.stringify({username, password}));
+  const register = async () => {
+    if(password === confirmPass) {
+      const payload: string = JSON.stringify({ username, password });
+      postAjax('/register-user', payload);
+    } else {
+      alert('Passwords do not match');
+    }
+  }
 
   return (
     <div className="Global-max-width o-Credentials__wrapper">
-      <h1 className="o-Credentials__heading">Login</h1>
+      <h1 className="o-Credentials__heading">Register</h1>
       <div className="o-Credentials__inputs-wrap">
         <div className="o-Credentials__label">Username</div>
         <input
@@ -27,18 +38,24 @@ function Login(): JSX.Element {
           onChange={(e) => setPassword(e.target.value)}
           type="password"
         />
+        <div className="o-Credentials__label">Confirm Password</div>
+        <input
+          className="Global-input"
+          onChange={(e) => setConfirmPass(e.target.value)}
+          type="password"
+        />
         <button
           className="o-Credentials__button"
-          onClick={login}
+          onClick={register}
         >
-          Login
+          Register
         </button>
         <div className="Global-link">
-          <Link to="/register">Don't have an account?</Link>
+          <Link to="/login">Already Registered?</Link>
         </div>
       </div>
     </div>
   )
 }
 
-export default Login;
+export default Register;
