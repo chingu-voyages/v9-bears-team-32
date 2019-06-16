@@ -18,7 +18,7 @@ import com.chingu.stocks.helper.Helpers;
 @RequestMapping("/api")
 public class ApiController {
 	
-	@PostMapping("/login")
+	@PostMapping("/login-user")
 	public void login(HttpServletRequest request, HttpServletResponse response) throws IOException, JSONException {
 		String payloadString = Helpers.convertJsonToString( request.getInputStream() );
 		JSONObject payloadJson = new JSONObject(payloadString);

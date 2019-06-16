@@ -7,7 +7,8 @@ function App(): JSX.Element {
   return (
     <>
       <Switch>
-        <Route exact path="/" component={Login}/>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/login" component={Login} />
       </Switch>
     </>
   )

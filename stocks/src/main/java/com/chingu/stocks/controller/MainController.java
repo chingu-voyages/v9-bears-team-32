@@ -17,7 +17,7 @@ public class MainController {
     userDao = theUserDao;
   }
 
-  @GetMapping("/")
+  @GetMapping({"/", "/login"})
   public String homePage() {
 
     User user = new User("test","testpass","display","emailtest",100,100);

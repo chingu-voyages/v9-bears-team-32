@@ -29,7 +29,7 @@ function Login(): JSX.Element {
         >
           Login
         </button>
-        <div className="c-Login__no-account">Don't have account?</div>
+        <div className="c-Login__no-account">Don't have an account?</div>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-@import '../../globals';
+@import '../../global-scss/settings';
 
 .c-Login__wrapper {
   width: 90vw;
@@ -44,7 +44,7 @@
 .c-Login__no-account {
   color: $accentBlue;
   cursor: pointer;
-  font-size: .95em;
+  font-size: .85em;
 
   &:hover {
     text-decoration: underline;

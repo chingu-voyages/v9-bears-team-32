@@ -11,6 +11,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, '../' ,'static/assets/js'),
     compress: true,
+    open: true,
     inline: true,
     port: 3000,
     publicPath: '/',
