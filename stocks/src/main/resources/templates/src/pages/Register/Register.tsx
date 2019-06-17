@@ -16,7 +16,7 @@ function Register(): JSX.Element {
 
   const register = async () => {
     if(password === confirmPass) {
-      const payload: string = JSON.stringify({ username, password });
+      const payload: string = JSON.stringify({ username, password, displayName, email });
       postAjax('/register-user', payload);
     } else {
       alert('Passwords do not match');
@@ -44,9 +44,22 @@ function Register(): JSX.Element {
           onChange={(e) => setConfirmPass(e.target.value)}
           type="password"
         />
+        <div className="o-Credentials__label">Display Name</div>
+        <input
+          className="Global-input"
+          onChange={(e) => setDisplayName(e.target.value)}
+          type="password"
+        />
+        <div className="o-Credentials__label">Email</div>
+        <input
+          className="Global-input"
+          onChange={(e) => setEmail(e.target.value)}
+          type="password"
+        />
         <button
           className="o-Credentials__button"
           onClick={register}
+          type="button"
         >
           Register
         </button>

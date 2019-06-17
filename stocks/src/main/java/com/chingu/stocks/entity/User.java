@@ -1,15 +1,13 @@
 package com.chingu.stocks.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @Entity
 @Table(name="users")
+@SecondaryTable(name="authorities")
 public class User {
   @Id
   @Column(name="username")
@@ -34,14 +32,17 @@ public class User {
   @Column(name="enabled")
   private byte enabled;
 
+	@Column(table="authorities")
+	private String authority;
+
   public User() {
 
   }
 
-  public User(String username,
-              String password,
-              String displayName,
-              String email) {
+	public User(String username,
+							String password,
+							String displayName,
+							String email) {
     this.username = username;
     this.password = password;
     this.displayName = displayName;
@@ -49,9 +50,10 @@ public class User {
     this.cash = 10000;
     this.investedBalance = 0;
     this.enabled = 1;
+		this.authority = "ROLE_USER";
   }
 
-  	public String getUsername() {
+  public String getUsername() {
 		return this.username;
 	}
 
@@ -105,5 +107,13 @@ public class User {
 
 	public void setEnabled(byte enabled) {
 		this.enabled = enabled;
+	}
+
+	public String getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
 	}
 }

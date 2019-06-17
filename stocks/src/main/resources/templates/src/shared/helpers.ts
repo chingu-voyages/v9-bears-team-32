@@ -7,7 +7,7 @@ async function postAjax(route: string, payload: string) {
       credentials: 'same-origin',
   }
   try {
-    const res = await fetch(`/api/${route}`, postConfig);
+    const res = await fetch(`/api${route}`, postConfig);
     return await res.json();
   } catch(e) {
     throw e;
