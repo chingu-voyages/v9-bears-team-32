@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 @Table(name="users")
@@ -44,7 +45,7 @@ public class User {
 							String displayName,
 							String email) {
     this.username = username;
-    this.password = password;
+    this.password = "{bcrypt}"+new BCryptPasswordEncoder().encode(password);
     this.displayName = displayName;
     this.email = email;
     this.cash = 10000;

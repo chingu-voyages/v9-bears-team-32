@@ -48,13 +48,11 @@ function Register(): JSX.Element {
         <input
           className="Global-input"
           onChange={(e) => setDisplayName(e.target.value)}
-          type="password"
         />
         <div className="o-Credentials__label">Email</div>
         <input
           className="Global-input"
           onChange={(e) => setEmail(e.target.value)}
-          type="password"
         />
         <button
           className="o-Credentials__button"
