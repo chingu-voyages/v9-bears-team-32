@@ -1,9 +1,8 @@
 // external
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 // internal
-import { postAjax } from '../../shared/helpers';
 import '../../global-scss/sections/credentials.scss';
 
 function Login(): JSX.Element {
@@ -18,13 +17,11 @@ function Login(): JSX.Element {
         <div className="o-Credentials__label">Username</div>
         <input
           className="Global-input"
-          id="username"
           name="username"
         />
         <div className="o-Credentials__label">Password</div>
         <input
           className="Global-input"
-          id="password"
           name="password"
           type="password"
         />
