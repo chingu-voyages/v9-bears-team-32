@@ -1,3 +1,5 @@
+// IN PROGRESS
+
 import iValidationState from '../constants/types/iValidationStates';
 import ValidationState from './ValidationState';
 
