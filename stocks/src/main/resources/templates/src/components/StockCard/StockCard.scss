@@ -1,0 +1,26 @@
+@import '../../global-scss/settings.scss';
+
+$block: '.StockCard';
+
+#{$block}__wrap {
+  background-color: $gray1;
+  color: $darkBlue;
+  padding: .5em 1em;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $gray2;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+#{$block}__label {
+  font-weight: 600;
+}

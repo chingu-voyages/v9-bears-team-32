@@ -1,15 +1,18 @@
 import React, { FC } from 'react';
-import iStock from '../../constants/types/iStock';
+import accounting from 'accounting';
+import iStockCard from '../../constants/types/iStockCard';
+import './StockCard.scss';
 
-interface IProps {
-  stock: iStock,
-}
-
-const StockCard: FC<IProps> = ({stock}): JSX.Element => {
+const StockCard: FC<iStockCard> = ({stock}): JSX.Element => {
   return (
-    <>
-      {stock.name}
-    </>
+    <div className="StockCard__wrap">
+      <div className="StockCard__label">{stock.name}</div>
+      <div>
+        <span className="StockCard__label"># Purchased </span>{stock.numberOwned}</div>
+      <div>
+        <span className="StockCard__label">Stock Price </span>{accounting.formatMoney(stock.value)}
+      </div>
+    </div>
   )
 }
 

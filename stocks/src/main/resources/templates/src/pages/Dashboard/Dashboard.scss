@@ -1,0 +1,11 @@
+@import '../../global-scss/settings.scss';
+
+$block: '.Dashboard';
+
+#{$block}__stockcards-wrap {
+  max-width: $pageMaxWidth;
+  margin: auto;
+  background-color: $darkBlue;
+  padding: 1.5em;
+  border-radius: 4px;
+}
