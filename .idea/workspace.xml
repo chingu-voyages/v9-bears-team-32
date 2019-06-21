@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="587605bc-b8c3-4142-a0fc-e58c3a3159f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/ApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/modules/Validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/modules/Validator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/pages/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/pages/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/MainController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/stocks/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="257">
+              <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,15 +52,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/ApiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+            <state relative-caret-position="675">
+              <caret line="62" column="25" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="25" />
               <folding>
                 <element signature="e#769#770#0" expanded="true" />
                 <element signature="e#805#806#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityWebApplicationInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -91,11 +105,11 @@
       <list>
         <option value="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityWebApplicationInitializer.java" />
         <option value="$PROJECT_DIR$/stocks/pom.xml" />
-        <option value="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/entity/User.java" />
         <option value="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/dto/UserDTO.java" />
         <option value="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/ApiController.java" />
+        <option value="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java" />
       </list>
     </option>
   </component>
@@ -151,6 +165,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="stocks" type="462c0819:PsiDirectoryNode" />
+              <item name="configs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="v9-bears-team-32" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stocks" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="stocks" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -162,7 +185,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560997043359" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561084262191" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -246,13 +269,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityWebApplicationInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stocks/stocks.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -283,31 +299,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-          <folding>
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stocks/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -335,11 +330,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/ApiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+        <state relative-caret-position="675">
+          <caret line="62" column="25" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="25" />
           <folding>
             <element signature="e#769#770#0" expanded="true" />
             <element signature="e#805#806#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityWebApplicationInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

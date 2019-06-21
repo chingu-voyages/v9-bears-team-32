@@ -10,7 +10,7 @@ import com.chingu.stocks.entity.User;
 @Controller
 public class MainController {
 
-  @GetMapping({"/", "/login", "/register"})
+  @GetMapping({"/", "/login", "/register", "/dashboard"})
   public String homePage() {
     return "index";
   }
