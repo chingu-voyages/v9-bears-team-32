@@ -1,3 +1,12 @@
+async function getAjax(route: string) {
+  try {
+    const res = await fetch(`/api${route}`);
+    return await res.json();
+  } catch(e) {
+    throw e;
+  }
+}
+
 async function postAjax(route: string, payload: string) {
 
   const postConfig: RequestInit = {
@@ -15,4 +24,4 @@ async function postAjax(route: string, payload: string) {
 
 }
 
-export { postAjax };
+export { getAjax, postAjax };

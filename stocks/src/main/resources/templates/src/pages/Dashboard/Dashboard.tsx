@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { iStock } from '../../constants/types';
 import { StockCard, UserDetailsPanel, StockGraph} from '../../components/index';
 import './Dashboard.scss';
+import { getAjax } from '../../shared/helpers';
 
 function Dashboard(): JSX.Element {
+
+  useEffect(() => {
+    getUserDetails();
+  }, []);
+
+  //todo save to store
+  const getUserDetails = async () =>  {
+   const data = await getAjax('/user-details');
+  }
+
   // Dummy data to be replaced with API call and placed in store
   const purchasedStocks: Array<iStock> = [
     {
