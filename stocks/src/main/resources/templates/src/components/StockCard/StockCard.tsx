@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import accounting from 'accounting';
-import iStockCard from '../../constants/types/iStockCard';
+import { iStockCard } from '../../constants/types';
 import './StockCard.scss';
 
 const StockCard: FC<iStockCard> = ({stock}): JSX.Element => {

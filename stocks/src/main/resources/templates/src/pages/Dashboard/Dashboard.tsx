@@ -1,7 +1,6 @@
 import React from 'react';
-import iStock from '../../constants/types/iStock';
-import StockCard from '../../components/StockCard/StockCard';
-import UserDetailsPanel from '../../components/UserDetailsPanel/UserDetailsPanel';
+import { iStock } from '../../constants/types';
+import { StockCard, UserDetailsPanel, StockGraph} from '../../components/index';
 import './Dashboard.scss';
 
 function Dashboard(): JSX.Element {
@@ -47,6 +46,7 @@ function Dashboard(): JSX.Element {
       <UserDetailsPanel
         availableCash={availableCash}
       />
+      <StockGraph />
       <div className="Dashboard__stockcards-wrap">
         {purchasedStocks.map((stock: iStock) => <StockCard stock={stock} /> )}
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import accounting from 'accounting';
-import iUserDetailsPanel from '../../constants/types/iUserDetailsPanel';
+import { iUserDetailsPanel } from '../../constants/types';
 import './UserDetailsPanel.scss';
 
 function UserDetailsPanel(props: iUserDetailsPanel): JSX.Element {

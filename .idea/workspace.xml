@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="587605bc-b8c3-4142-a0fc-e58c3a3159f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/MainController.java" afterDir="false" />
-    </list>
+    <list default="true" id="587605bc-b8c3-4142-a0fc-e58c3a3159f5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/stocks/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +14,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="420">
               <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -43,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/dto/UserDTO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+              <caret column="30" selection-start-column="30" selection-end-column="30" />
               <folding>
                 <element signature="e#97#98#0" expanded="true" />
                 <element signature="e#114#115#0" expanded="true" />
@@ -185,7 +182,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561084262191" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561178533013" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -245,7 +242,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49899396" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49899396" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" sideWeight="0.501006" side_tool="true" weight="0.24964234" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
@@ -253,7 +250,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32928476" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36032388" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36032388" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -320,7 +317,7 @@
     <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/dto/UserDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
           <folding>
             <element signature="e#97#98#0" expanded="true" />
             <element signature="e#114#115#0" expanded="true" />
@@ -355,7 +352,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/configs/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="420">
           <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
