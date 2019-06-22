@@ -8,11 +8,11 @@ import '../../global-scss/sections/credentials.scss';
 
 
 function Register(): JSX.Element {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPass, setConfirmPass] = useState('');
-  const [displayName, setDisplayName] = useState('');
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [confirmPass, setConfirmPass] = useState<string>('');
+  const [displayName, setDisplayName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
 
   const register = async () => {
     if(password === confirmPass) {
