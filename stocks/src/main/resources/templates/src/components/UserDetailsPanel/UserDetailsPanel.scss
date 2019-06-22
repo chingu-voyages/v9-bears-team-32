@@ -11,3 +11,18 @@ $block: '.UserDetailsPanel';
   display: flex;
   justify-content: space-between;
 }
+
+#{$block}__info-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+#{$block}__sell-btn {
+  @include button($accentGreen);
+}
+
+#{$block}__buy-btn {
+  @include button($accentBlue);
+}

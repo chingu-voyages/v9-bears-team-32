@@ -18,3 +18,23 @@ $font1: sans-serif;
 // Important Styles
 $defaultInputWidth: 150px;
 $pageMaxWidth: 1280px;
+
+
+// Mixings
+@mixin button($bgColor) {
+  border: 0;
+  padding: .5em 1em;
+  border-radius: 4px;
+  margin: 0 .5em;
+  box-sizing: border-box;
+  font-size: .8em;
+  background-color: $bgColor;
+  cursor: pointer;
+  border: 2px solid $bgColor;
+  font-weight: 600;
+  outline: none;
+
+  &:hover {
+    border: 2px solid white;
+  }
+}

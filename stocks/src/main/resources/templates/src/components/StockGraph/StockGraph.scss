@@ -1,0 +1,10 @@
+@import '../../global-scss/settings';
+$block: '.StockGraph';
+
+#{$block}__wrapper {
+  background-color: $gray1;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+}

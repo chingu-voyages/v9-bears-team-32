@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.chingu.stocks.dao.UserDAO;
 import com.chingu.stocks.entity.User;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class MainController {
 
@@ -15,4 +17,9 @@ public class MainController {
     return "index";
   }
 
+  @GetMapping("/logout")
+  public String logout(HttpServletRequest request) {
+    request.getSession().invalidate();
+    return "index";
+  }
 }
