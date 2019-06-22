@@ -9,9 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.chingu.stocks.dao.UserDAO;
 import com.chingu.stocks.dto.UserDTO;
 import com.chingu.stocks.entity.User;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,9 +61,10 @@ public class ApiController {
     }
 
     @GetMapping("/user-details")
-    public UserDTO userDetails(HttpServletRequest request) {
-        User user = (User) request.getSession().getAttribute("userDetails");
-        UserDTO userDto = new UserDTO();
+    public UserDTO userDetails(HttpServletRequest request, Authentication authentication) throws JsonProcessingException {
+        UserDTO userDto = new UserDTO(userDao, authentication.getName());
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.writeValueAsString(userDto);
         return userDto;
     }
 }

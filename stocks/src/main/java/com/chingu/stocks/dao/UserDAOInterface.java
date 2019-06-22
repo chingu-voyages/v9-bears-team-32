@@ -4,4 +4,6 @@ import com.chingu.stocks.entity.User;
 
 public interface UserDAOInterface {
   public void saveUser(User user);
+
+  public User findByUsername(String username);
 }

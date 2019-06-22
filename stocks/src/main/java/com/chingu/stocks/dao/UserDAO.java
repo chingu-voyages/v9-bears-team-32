@@ -22,4 +22,13 @@ public class UserDAO implements UserDAOInterface {
     Session currentSession = entityManager.unwrap(Session.class);
     currentSession.saveOrUpdate(user);
   }
+
+  @Override
+  @Transactional
+  public User findByUsername(String username) {
+    Session currentSession = entityManager.unwrap(Session.class);
+    User userResult = currentSession.get(User.class, username);
+
+    return userResult;
+  }
 }
