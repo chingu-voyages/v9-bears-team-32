@@ -1,10 +1,9 @@
 import React, { useEffect, useContext } from 'react';
 import GlobalContext from '../../context/GlobalContext';
-import { iStock } from '../../constants/types';
-import { StockCard, UserDetailsPanel, StockGraph} from '../../components/index';
+import { iStock, iContext } from '../../constants/types';
+import { StockCard, UserDetailsPanel, StockGraph} from '../../components';
 import { getAjax } from '../../shared/helpers';
 import { ACTION_TYPES } from '../../context/GlobalContext/globalContextActions';
-import { iContext } from '../../constants/types/index';
 import './Dashboard.scss';
 
 function Dashboard(): JSX.Element {

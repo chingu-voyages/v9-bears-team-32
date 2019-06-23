@@ -1,4 +1,4 @@
-import { iGlobalContextState } from "./index";
+import { iGlobalContextState } from ".";
 
 export default interface iContext {
   state: iGlobalContextState;

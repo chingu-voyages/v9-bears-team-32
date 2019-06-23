@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import accounting from 'accounting';;
 import { iContext } from '../../constants/types/index';
+import { Modal } from '..';
 import GlobalContext from '../../context/GlobalContext/index';
 import './UserDetailsPanel.scss';
-import Modal from '../Modal/Modal';
 
 function UserDetailsPanel(): JSX.Element {
   const globalContext: iContext = useContext(GlobalContext);
