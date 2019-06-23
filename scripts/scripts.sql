@@ -26,3 +26,19 @@ CREATE TABLE `authorities` (
   FOREIGN KEY (`username`)
   REFERENCES `users` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `stock`;
+
+CREATE TABLE `stock` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(55),
+  `symbol` varchar(20),
+  `purchase_price` int(45) DEFAULT 0,
+  `purchase_date` datetime(6) DEFAULT NULL,
+
+  UNIQUE KEY `stock_idx_1` (`id`),
+
+  CONSTRAINT `stock_ibfk_1`
+  FOREIGN KEY (`username`)
+  REFERENCES `users` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

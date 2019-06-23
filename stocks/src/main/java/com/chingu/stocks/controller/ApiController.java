@@ -26,45 +26,45 @@ import com.chingu.stocks.helper.Helpers;
 @RequestMapping("/api")
 public class ApiController {
 
-    UserDAO userDao;
+  UserDAO userDao;
 
-    @Autowired
-    public ApiController(UserDAO theUserDao) {
-        userDao = theUserDao;
-    }
+  @Autowired
+  public ApiController(UserDAO theUserDao) {
+    userDao = theUserDao;
+  }
 
-    @PostMapping("/register-user")
-    public void register(HttpServletRequest request, HttpServletResponse response) throws IOException, JSONException {
-        String payloadString = Helpers.convertJsonToString( request.getInputStream() );
-        JSONObject payloadJson = new JSONObject(payloadString);
+  @PostMapping("/register-user")
+  public void register(HttpServletRequest request, HttpServletResponse response) throws IOException, JSONException {
+    String payloadString = Helpers.convertJsonToString( request.getInputStream() );
+    JSONObject payloadJson = new JSONObject(payloadString);
 
-        User user = new User(payloadJson.getString("username"),
-                             payloadJson.getString("password"),
-                             payloadJson.getString("displayName"),
-                             payloadJson.getString("email")
-                            );
+    User user = new User(payloadJson.getString("username"),
+        payloadJson.getString("password"),
+        payloadJson.getString("displayName"),
+        payloadJson.getString("email")
+    );
 
-        userDao.saveUser(user);
+    userDao.saveUser(user);
 
-        request.getSession().setAttribute("userDetails", userDao);
+    request.getSession().setAttribute("userDetails", userDao);
 
-        // @TODO Create appropriate response based on successful/failed login
-        JSONObject responsePayload = new JSONObject();
-        responsePayload.put("status", "success");
+    // @TODO Create appropriate response based on successful/failed login
+    JSONObject responsePayload = new JSONObject();
+    responsePayload.put("status", "success");
 
-        PrintWriter out = response.getWriter();
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        out.print(responsePayload);
-        out.flush();;
+    PrintWriter out = response.getWriter();
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+    out.print(responsePayload);
+    out.flush();;
 
-    }
+  }
 
-    @GetMapping("/user-details")
-    public UserDTO userDetails(HttpServletRequest request, Authentication authentication) throws JsonProcessingException {
-        UserDTO userDto = new UserDTO(userDao, authentication.getName());
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.writeValueAsString(userDto);
-        return userDto;
-    }
+  @GetMapping("/user-details")
+  public UserDTO userDetails(HttpServletRequest request, Authentication authentication) throws JsonProcessingException {
+    UserDTO userDto = new UserDTO(userDao, authentication.getName());
+    ObjectMapper objectMapper = new ObjectMapper();
+    objectMapper.writeValueAsString(userDto);
+    return userDto;
+  }
 }

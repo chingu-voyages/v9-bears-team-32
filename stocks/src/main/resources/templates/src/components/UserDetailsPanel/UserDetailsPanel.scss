@@ -38,6 +38,7 @@ $block: '.UserDetailsPanel';
   background-color: $accentBlue;
   text-align: center;
   padding: 1em;
+  position: relative;
 
   h3 {
     margin: 0;
@@ -46,4 +47,8 @@ $block: '.UserDetailsPanel';
 
 #{$block}__buy-body {
   padding: 1em;
+}
+
+#{$block}__buy-modal-btn {
+  @include button($accentOrange);
 }

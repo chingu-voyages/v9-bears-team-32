@@ -30,13 +30,25 @@ function UserDetailsPanel(): JSX.Element {
       </div>
       {showBuyModal &&
       <Modal>
-        <div
-          className="UserDetailsPanel__buy-modal"
-          onClick={() => setShowBuyModal(false)}>
+        <div className="UserDetailsPanel__buy-modal">
           <div className="UserDetailsPanel__buy-header">
             <h3>Buy Stock</h3>
+            <div
+              className="Global-exit"
+              onClick={() => setShowBuyModal(false)}
+            >
+              X
+            </div>
           </div>
-          Test
+          <div className="UserDetailsPanel__buy-body">
+            <h3>Search by Stock Symbol</h3>
+            <input
+              className="Global-input Global-input--modal"
+            />
+            <button className="UserDetailsPanel__buy-modal-btn">
+              Search
+            </button>
+          </div>
         </div>
       </Modal>}
     </div>
