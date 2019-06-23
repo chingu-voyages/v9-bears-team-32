@@ -26,3 +26,24 @@ $block: '.UserDetailsPanel';
 #{$block}__buy-btn {
   @include button($accentBlue);
 }
+
+#{$block}__buy-modal {
+  min-height: 300px;
+  width: 500px;
+  background-color: $gray1;
+  color: $darkBlue;
+}
+
+#{$block}__buy-header {
+  background-color: $accentBlue;
+  text-align: center;
+  padding: 1em;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+#{$block}__buy-body {
+  padding: 1em;
+}

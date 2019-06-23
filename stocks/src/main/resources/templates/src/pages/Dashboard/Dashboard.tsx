@@ -59,7 +59,7 @@ function Dashboard(): JSX.Element {
       <UserDetailsPanel />
       <StockGraph />
       <div className="Dashboard__stockcards-wrap">
-        {purchasedStocks.map((stock: iStock) => <StockCard stock={stock} /> )}
+        {purchasedStocks.map((stock: iStock, i: number) => <StockCard key={stock.symbol+i} stock={stock} /> )}
       </div>
     </>
   )
