@@ -1,20 +1,24 @@
-import React from 'react';
-import accounting from 'accounting';
-import { iUserDetailsPanel } from '../../constants/types';
+import React, { useContext } from 'react';
+import accounting from 'accounting';;
+import { iContext } from '../../constants/types/index';
+import GlobalContext from '../../context/GlobalContext/index';
 import './UserDetailsPanel.scss';
 
-function UserDetailsPanel(props: iUserDetailsPanel): JSX.Element {
-  const { availableCash } = props;
+
+function UserDetailsPanel(): JSX.Element {
+  const globalContext: iContext = useContext(GlobalContext);
+  const { cash, displayName, } = globalContext.state.user;
+
   return (
     <div className="UserDetailsPanel__wrap">
       <div>
-        <div>RobBertram123</div>
+        <div>{displayName}</div>
         <div className="Global-link">
           <a href="/logout">Logout</a>
         </div>
       </div>
       <div className="UserDetailsPanel__info-wrap">
-        <div>Available Cash: {accounting.formatMoney(availableCash)}</div>
+        <div>Available Cash: {accounting.formatMoney(cash)}</div>
         <button className="UserDetailsPanel__buy-btn">Buy</button>
         <button className="UserDetailsPanel__sell-btn">Sell</button>
       </div>

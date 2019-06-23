@@ -13,7 +13,7 @@ import globalContextReducer from './context/GlobalContext/globalContextReducer';
 const history = createBrowserHistory();
 
 function MainJSX(): JSX.Element {
-  const [state, dispatch] = useReducer(globalContextReducer, globalContextState);
+  const [state, dispatch] = useReducer<any>(globalContextReducer, globalContextState);
 
   return (
     <GlobalContext.Provider value={{state, dispatch}}>

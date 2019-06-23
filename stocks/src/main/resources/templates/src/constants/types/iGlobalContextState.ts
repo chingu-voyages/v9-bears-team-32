@@ -1,3 +1,5 @@
+import { iUser } from "./index";
+
 export default interface iGlobalContextState {
-  username: string,
+  user: iUser,
 }

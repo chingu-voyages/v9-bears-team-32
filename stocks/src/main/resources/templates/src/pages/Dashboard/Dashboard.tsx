@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import GlobalContext from '../../context/GlobalContext';
 import { iStock } from '../../constants/types';
 import { StockCard, UserDetailsPanel, StockGraph} from '../../components/index';
-import './Dashboard.scss';
 import { getAjax } from '../../shared/helpers';
+import { ACTION_TYPES } from '../../context/GlobalContext/globalContextActions';
+import { iContext } from '../../constants/types/index';
+import './Dashboard.scss';
 
 function Dashboard(): JSX.Element {
+  const globalContext: iContext = useContext(GlobalContext);
 
   useEffect(() => {
     getUserDetails();
   }, []);
 
-  //todo save to store
   const getUserDetails = async () =>  {
    const data = await getAjax('/user-details');
+   globalContext.dispatch({type: ACTION_TYPES.UPDATE_USER_DETAILS, payload: data.user});
   }
 
   // Dummy data to be replaced with API call and placed in store
@@ -49,14 +53,10 @@ function Dashboard(): JSX.Element {
     },
   ]
 
-  const availableCash: number = 10000;
-
 
   return (
     <>
-      <UserDetailsPanel
-        availableCash={availableCash}
-      />
+      <UserDetailsPanel />
       <StockGraph />
       <div className="Dashboard__stockcards-wrap">
         {purchasedStocks.map((stock: iStock) => <StockCard stock={stock} /> )}
