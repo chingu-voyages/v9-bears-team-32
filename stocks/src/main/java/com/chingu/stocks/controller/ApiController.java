@@ -2,6 +2,8 @@ package com.chingu.stocks.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -68,19 +70,23 @@ public class ApiController {
     return userDto;
   }
 
-  @GetMapping("/search-stock")
+  @PostMapping("/search-stock")
   public String userDetails(HttpServletRequest request) throws IOException, JSONException {
     String payloadString = Helpers.convertJsonToString( request.getInputStream() );
     JSONObject payloadJson = new JSONObject(payloadString);
 
+
     if(payloadJson != null) {
       String stockSymbol = payloadJson.getString("symbol");
       String token = System.getenv("SEARCH_TOKEN");
-      //https://cloud.iexapis.com/stable/stock/aapl/quote?token=token
-    } else {
-      return "No symbol provided";
-    }
+      String url = "https://cloud.iexapis.com/stable/stock/"+stockSymbol+"/quote?token="+token;
 
-    return "";
+      URL obj = new URL(url);
+      HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
+      String stringifiedResponse = Helpers.convertJsonToString( connection.getInputStream() );
+      return stringifiedResponse;
+    } else {
+      return null;
+    }
   }
 }
