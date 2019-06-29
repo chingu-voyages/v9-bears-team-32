@@ -89,4 +89,15 @@ public class ApiController {
       return null;
     }
   }
+
+  @PostMapping("/purchase-stock")
+  public String purchaseStock(HttpServletRequest request) throws IOException, JSONException {
+    String payloadString = Helpers.convertJsonToString(request.getInputStream());
+    JSONObject payloadJson = new JSONObject(payloadString);
+
+    if(payloadJson != null) {
+      // add stock goes here
+    }
+    return null;
+  }
 }

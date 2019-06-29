@@ -6,6 +6,7 @@ import GlobalContext from '../../context/GlobalContext/index';
 import './UserDetailsPanel.scss';
 import { postAjax } from '../../shared/helpers';
 import iStockInfo from '../../constants/types/iStockInfo';
+import iPurchaseRequestPayload from '../../constants/types/iPurchaseRequestPayload';
 
 function UserDetailsPanel(): JSX.Element {
   const globalContext: iContext = useContext(GlobalContext);
@@ -18,6 +19,9 @@ function UserDetailsPanel(): JSX.Element {
 
   const { formatMoney } = accounting;
 
+  useEffect(() => {
+    setStockInfo(null);
+  },[showBuyModal])
 
   useEffect(() => {
     if(stockInfo) {
@@ -30,7 +34,27 @@ function UserDetailsPanel(): JSX.Element {
       const response: iStockInfo = await postAjax('/search-stock', JSON.stringify({symbol: stockSymbol}));
       setStockInfo(response);
     } else {
-      alert("Please enter stock symbol");
+      alert('Please enter stock symbol');
+    }
+  }
+
+  const sendPurchaseRequest = async () => {
+    if(!quantity) {
+      alert('Please enter quantity.');
+      return;
+    }
+
+    const purchaseRequestPayload: iPurchaseRequestPayload = {
+      expectedPrice: totalCost,
+      quantity,
+      stockSymbol,
+    }
+
+    try {
+    const data = await postAjax('/purchase-stock', JSON.stringify(purchaseRequestPayload));
+    const jsonResponse = await data.json();
+    } catch {
+      console.log('failed request');
     }
   }
 
@@ -100,6 +124,7 @@ function UserDetailsPanel(): JSX.Element {
                   type="number"
                 />
                 <button
+                  onClick={sendPurchaseRequest}
                   className="UserDetailsPanel__buy-btn"
                   type="button"
                 >
