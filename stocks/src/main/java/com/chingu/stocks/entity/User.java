@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name="users")
 @SecondaryTable(name="authorities")
@@ -36,6 +39,9 @@ public class User {
 	@Column(table="authorities")
 	private String authority;
 
+	@OneToMany(mappedBy = "user")
+	private Set<Stock> stocks;
+
   public User() {
 
   }
@@ -53,6 +59,14 @@ public class User {
     this.enabled = 1;
 		this.authority = "ROLE_USER";
   }
+
+  public void addStock(Stock stock) {
+  	if(stocks == null) {
+  		stocks = new HashSet<>();
+		}
+  	stocks.add(stock);
+  	stock.setUser(this);
+	}
 
   public String getUsername() {
 		return this.username;

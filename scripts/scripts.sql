@@ -35,6 +35,7 @@ CREATE TABLE `stock` (
   `symbol` varchar(20),
   `purchase_price` int(45) DEFAULT 0,
   `purchase_date` datetime(6) DEFAULT NULL,
+  `quantity` int(100) DEFAULT NULL,
 
   UNIQUE KEY `stock_idx_1` (`id`),
 

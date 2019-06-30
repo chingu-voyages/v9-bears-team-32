@@ -2,6 +2,7 @@ package com.chingu.stocks.dao;
 
 import javax.persistence.EntityManager;
 
+import com.chingu.stocks.entity.Stock;
 import com.chingu.stocks.entity.User;
 
 import org.hibernate.Session;
@@ -30,5 +31,14 @@ public class UserDAO implements UserDAOInterface {
     User userResult = currentSession.get(User.class, username);
 
     return userResult;
+  }
+
+  @Override
+  @Transactional
+  public void addStock(String username, Stock stock) {
+    Session currentSession = entityManager.unwrap(Session.class);
+    User user = currentSession.get(User.class, username);
+    user.addStock(stock);
+    currentSession.saveOrUpdate(user);
   }
 }

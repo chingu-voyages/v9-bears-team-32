@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.chingu.stocks.dao.UserDAO;
 import com.chingu.stocks.dto.UserDTO;
+import com.chingu.stocks.entity.Stock;
 import com.chingu.stocks.entity.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -91,12 +92,14 @@ public class ApiController {
   }
 
   @PostMapping("/purchase-stock")
-  public String purchaseStock(HttpServletRequest request) throws IOException, JSONException {
+  public String purchaseStock(HttpServletRequest request, Authentication authentication) throws IOException, JSONException {
     String payloadString = Helpers.convertJsonToString(request.getInputStream());
     JSONObject payloadJson = new JSONObject(payloadString);
 
     if(payloadJson != null) {
-      // add stock goes here
+      // todo. Add parameters to new Stock and test changes
+      Stock stock = new Stock();
+      userDao.addStock(authentication.getName(), stock);
     }
     return null;
   }
