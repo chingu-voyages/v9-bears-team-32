@@ -1,18 +1,24 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { Dashboard, Login, Register } from './pages/index';
+import React, { useReducer } from 'react';
+import Routes from './Routes';
+import GlobalContext from './context/GlobalContext/index';
+import globalContextState from './context/GlobalContext/globalContextState';
+import globalContextReducer from './context/GlobalContext/globalContextReducer';
+import { Router } from 'react-router';
+import { createBrowserHistory } from 'history';
 import './App.scss';
 
+const history = createBrowserHistory();
+
 function App(): JSX.Element {
+  const [state, dispatch] = useReducer<any>(globalContextReducer, globalContextState);
+
   return (
     <>
-      <Switch>
-        {/* @TODO create landing page and 404 page */}
-        <Route exact path="/" component={Login} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/dashboard" component={Dashboard} />
-      </Switch>
+      <GlobalContext.Provider value={{state, dispatch}}>
+        <Router history={history}>
+          <Routes/>
+        </Router>
+      </GlobalContext.Provider>
     </>
   )
 }
