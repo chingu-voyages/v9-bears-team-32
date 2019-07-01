@@ -39,7 +39,7 @@ public class User {
 	@Column(table="authorities")
 	private String authority;
 
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = { CascadeType.ALL})
 	private Set<Stock> stocks;
 
   public User() {
@@ -130,5 +130,12 @@ public class User {
 
 	public void setAuthority(String authority) {
 		this.authority = authority;
+	}
+	public Set<Stock> getStocks() {
+		return stocks;
+	}
+
+	public void setStocks(Set<Stock> stocks) {
+		this.stocks = stocks;
 	}
 }

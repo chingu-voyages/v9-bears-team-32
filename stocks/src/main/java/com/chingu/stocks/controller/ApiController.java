@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +16,7 @@ import com.chingu.stocks.entity.Stock;
 import com.chingu.stocks.entity.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.hibernate.id.uuid.Helper;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,10 +68,7 @@ public class ApiController {
 
   @GetMapping("/user-details")
   public UserDTO userDetails(HttpServletRequest request, Authentication authentication) throws JsonProcessingException {
-    UserDTO userDto = new UserDTO(userDao, authentication.getName());
-    ObjectMapper objectMapper = new ObjectMapper();
-    objectMapper.writeValueAsString(userDto);
-    return userDto;
+    return Helpers.getUserDetails(authentication.getName(), userDao);
   }
 
   @PostMapping("/search-stock")
@@ -92,14 +92,17 @@ public class ApiController {
   }
 
   @PostMapping("/purchase-stock")
-  public String purchaseStock(HttpServletRequest request, Authentication authentication) throws IOException, JSONException {
+  public UserDTO purchaseStock(HttpServletRequest request, Authentication authentication) throws IOException, JSONException {
     String payloadString = Helpers.convertJsonToString(request.getInputStream());
     JSONObject payloadJson = new JSONObject(payloadString);
 
     if(payloadJson != null) {
-      // todo. Add parameters to new Stock and test changes
-      Stock stock = new Stock();
+      // todo. Add type checks for FE data passed, get price from BE and check against the FE, add date
+      DateFormat dateNow = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+      System.out.println("Here" + dateNow);
+      Stock stock = new Stock(authentication.getName(), payloadJson.getString("stockSymbol"), payloadJson.getInt("expectedPrice"), null, payloadJson.getInt("quantity"));
       userDao.addStock(authentication.getName(), stock);
+//      return Helpers.getUserDetails(authentication.getName(), userDao);
     }
     return null;
   }

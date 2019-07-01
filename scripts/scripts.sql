@@ -34,12 +34,13 @@ CREATE TABLE `stock` (
   `username` varchar(55),
   `symbol` varchar(20),
   `purchase_price` int(45) DEFAULT 0,
-  `purchase_date` datetime(6) DEFAULT NULL,
+  `purchase_date` timestamp (6) DEFAULT NULL,
   `quantity` int(100) DEFAULT NULL,
+  `user` varchar(55),
 
-  UNIQUE KEY `stock_idx_1` (`id`),
-
+  PRIMARY KEY (`id`),
+  KEY `stock_idx_1` (`user`),
   CONSTRAINT `stock_ibfk_1`
-  FOREIGN KEY (`username`)
+  FOREIGN KEY (`user`)
   REFERENCES `users` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

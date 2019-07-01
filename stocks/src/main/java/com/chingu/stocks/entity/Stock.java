@@ -26,7 +26,7 @@ public class Stock {
   private int quantity;
 
   @ManyToOne
-  @JoinColumn(name="username")
+  @JoinColumn(name="user")
   private User user;
 
   public Stock() {}
