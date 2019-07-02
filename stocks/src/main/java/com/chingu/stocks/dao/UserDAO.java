@@ -38,6 +38,23 @@ public class UserDAO implements UserDAOInterface {
   public void addStock(String username, Stock stock) {
     Session currentSession = entityManager.unwrap(Session.class);
     User user = currentSession.get(User.class, username);
+
+    // Subtract price from cash available and add to investedBalance
+    if(user.getCash() > stock.getPurchasePrice()) {
+      user.setCash(user.getCash() - stock.getPurchasePrice());
+      user.setInvestedBalance(user.getInvestedBalance() + stock.getPurchasePrice());
+    } else {
+      // TODO add handling of not enough cash here.
+      return;
+    }
+
+    for(Stock existingStock : user.getStocks()){
+      if(existingStock.getSymbol().equals(stock.getSymbol())) {
+        existingStock.setQuantity(existingStock.getQuantity() + 1);
+        currentSession.saveOrUpdate(user);
+        return;
+      }
+    }
     user.addStock(stock);
     currentSession.saveOrUpdate(user);
   }

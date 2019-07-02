@@ -1,6 +1,7 @@
 // external
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { history } from '../../App';
 
 // internal
 import { postAjax } from '../../shared/helpers';
@@ -18,6 +19,7 @@ function Register(): JSX.Element {
     if(password === confirmPass) {
       const payload: string = JSON.stringify({ username, password, displayName, email });
       postAjax('/register-user', payload);
+      history.push('/login');
     } else {
       alert('Passwords do not match');
     }

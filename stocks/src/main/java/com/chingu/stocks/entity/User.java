@@ -29,10 +29,10 @@ public class User {
   private String email;
 
   @Column(name="cash")
-  private int cash;
+  private double cash;
 
   @Column(name="invested_balance")
-  private int investedBalance;
+  private double investedBalance;
 
   @Column(name="enabled")
   private byte enabled;
@@ -102,19 +102,19 @@ public class User {
 		this.email = email;
   }
 
-	public int getCash() {
+	public double getCash() {
 		return this.cash;
 	}
 
-	public void setCash(int cash) {
+	public void setCash(double cash) {
 		this.cash = cash;
   }
 
-	public int getInvestedBalance() {
+	public double getInvestedBalance() {
 		return this.investedBalance;
 	}
 
-	public void setInvestedBalance(int investedBalance) {
+	public void setInvestedBalance(double investedBalance) {
 		this.investedBalance = investedBalance;
   }
 

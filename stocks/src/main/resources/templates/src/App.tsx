@@ -7,7 +7,7 @@ import { Router } from 'react-router';
 import { createBrowserHistory } from 'history';
 import './App.scss';
 
-const history = createBrowserHistory();
+export const history = createBrowserHistory();
 
 function App(): JSX.Element {
   const [state, dispatch] = useReducer<any>(globalContextReducer, globalContextState);

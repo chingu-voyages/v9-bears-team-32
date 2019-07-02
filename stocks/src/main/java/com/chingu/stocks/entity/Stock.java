@@ -19,7 +19,7 @@ public class Stock {
   private String symbol;
 
   @Column(name="purchase_price")
-  private int purchasePrice;
+  private double purchasePrice;
 
   @Column(name="purchase_date")
   private DateFormat purchaseDate;
@@ -34,7 +34,7 @@ public class Stock {
 
   public Stock() {}
 
-  public Stock(String username, String symbol, int purchasePrice, DateFormat purchaseDate, int quantity) {
+  public Stock(String username, String symbol, double purchasePrice, DateFormat purchaseDate, int quantity) {
     this.username = username;
     this.symbol = symbol;
     this.purchasePrice = purchasePrice;
@@ -66,11 +66,11 @@ public class Stock {
     this.symbol = symbol;
   }
 
-  public int getPurchasePrice() {
+  public double getPurchasePrice() {
     return purchasePrice;
   }
 
-  public void setPurchasePrice(int purchasePrice) {
+  public void setPurchasePrice(double purchasePrice) {
     this.purchasePrice = purchasePrice;
   }
 

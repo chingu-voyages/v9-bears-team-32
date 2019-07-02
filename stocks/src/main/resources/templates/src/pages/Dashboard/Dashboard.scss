@@ -10,3 +10,7 @@ $block: '.Dashboard';
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+#{$block}__center {
+  text-align: center;
+}

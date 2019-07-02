@@ -99,8 +99,7 @@ public class ApiController {
     if(payloadJson != null) {
       // todo. Add type checks for FE data passed, get price from BE and check against the FE, add date
       DateFormat dateNow = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-      System.out.println("Here" + dateNow);
-      Stock stock = new Stock(authentication.getName(), payloadJson.getString("stockSymbol"), payloadJson.getInt("expectedPrice"), null, payloadJson.getInt("quantity"));
+      Stock stock = new Stock(authentication.getName(), payloadJson.getString("stockSymbol"), payloadJson.getDouble("expectedPrice"), null, payloadJson.getInt("quantity"));
       userDao.addStock(authentication.getName(), stock);
 //      return Helpers.getUserDetails(authentication.getName(), userDao);
     }
