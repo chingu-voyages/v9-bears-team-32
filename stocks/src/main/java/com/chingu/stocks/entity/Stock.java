@@ -1,5 +1,7 @@
 package com.chingu.stocks.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.text.DateFormat;
 
@@ -27,6 +29,7 @@ public class Stock {
 
   @ManyToOne
   @JoinColumn(name="user")
+  @JsonBackReference // https://stackoverflow.com/questions/3325387/infinite-recursion-with-jackson-json-and-hibernate-jpa-issue
   private User user;
 
   public Stock() {}

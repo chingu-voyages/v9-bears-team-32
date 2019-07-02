@@ -2,6 +2,7 @@ package com.chingu.stocks.entity;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -40,6 +41,7 @@ public class User {
 	private String authority;
 
 	@OneToMany(mappedBy = "user", cascade = { CascadeType.ALL})
+	@JsonManagedReference // https://stackoverflow.com/questions/3325387/infinite-recursion-with-jackson-json-and-hibernate-jpa-issue
 	private Set<Stock> stocks;
 
   public User() {
