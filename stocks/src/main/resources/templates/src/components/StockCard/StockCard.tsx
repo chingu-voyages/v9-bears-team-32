@@ -4,9 +4,11 @@ import { iStockCard } from '../../constants/types';
 import './StockCard.scss';
 
 const StockCard: FC<iStockCard> = ({stock}): JSX.Element => {
+
   const [currentValue, setCurrentValue] = useState(0);
+
   useEffect(() => {
-    // Add API call here
+    // API call does not go here. State is passed here, but API is made for all stocks for graph.
     setCurrentValue(0);
   }, []);
 

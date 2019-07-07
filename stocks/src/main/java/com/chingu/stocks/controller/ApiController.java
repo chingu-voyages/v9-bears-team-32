@@ -101,7 +101,7 @@ public class ApiController {
       DateFormat dateNow = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
       Stock stock = new Stock(authentication.getName(), payloadJson.getString("stockSymbol"), payloadJson.getDouble("expectedPrice"), null, payloadJson.getInt("quantity"));
       userDao.addStock(authentication.getName(), stock);
-//      return Helpers.getUserDetails(authentication.getName(), userDao);
+      return Helpers.getUserDetails(authentication.getName(), userDao);
     }
     return null;
   }

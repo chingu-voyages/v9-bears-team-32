@@ -3,19 +3,24 @@ import accounting from 'accounting';;
 import { iContext } from '../../constants/types/index';
 import { Modal } from '..';
 import GlobalContext from '../../context/GlobalContext/index';
-import './UserDetailsPanel.scss';
 import { postAjax } from '../../shared/helpers';
 import iStockInfo from '../../constants/types/iStockInfo';
 import iPurchaseRequestPayload from '../../constants/types/iPurchaseRequestPayload';
+import { ACTION_TYPES } from '../../context/GlobalContext/globalContextActions';
+import './UserDetailsPanel.scss';
 
 function UserDetailsPanel(): JSX.Element {
-  const globalContext: iContext = useContext(GlobalContext);
+  // Local state
   const [showBuyModal, setShowBuyModal] = useState<boolean>(false);
   const [stockSymbol, setStockSymbol] = useState<string>('');
   const [stockInfo, setStockInfo] = useState<iStockInfo | null>(null);
   const [quantity, setQuantity] = useState<number>(0);
   const [totalCost, setTotalCost] = useState<number>(0);
-  const { cash, displayName, } = globalContext.state.user;
+
+  // Global State
+  const globalContext: iContext = useContext(GlobalContext);
+  const { state, dispatch } = globalContext;
+  const { cash, displayName, } = state.user;
 
   const { formatMoney } = accounting;
 
@@ -51,8 +56,12 @@ function UserDetailsPanel(): JSX.Element {
     }
 
     try {
-    const data = await postAjax('/purchase-stock', JSON.stringify(purchaseRequestPayload));
-    const jsonResponse = await data.json();
+      const data = await postAjax('/purchase-stock', JSON.stringify(purchaseRequestPayload));
+      const jsonResponse = await data;
+      if(jsonResponse.status !== 500) {
+        dispatch({ type: ACTION_TYPES.UPDATE_STOCKS, payload: jsonResponse.user.stocks});
+        setShowBuyModal(false);
+      }
     } catch {
       console.log('failed request');
     }

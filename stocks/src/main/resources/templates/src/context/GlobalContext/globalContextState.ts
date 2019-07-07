@@ -7,6 +7,7 @@ const globalContextState: iGlobalContextState = {
     email: '',
     investedBalance: 0,
     username: '',
+    stocks: [],
   }
 }
 

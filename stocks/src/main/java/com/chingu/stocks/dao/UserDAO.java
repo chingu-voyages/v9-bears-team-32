@@ -50,7 +50,7 @@ public class UserDAO implements UserDAOInterface {
 
     for(Stock existingStock : user.getStocks()){
       if(existingStock.getSymbol().equals(stock.getSymbol())) {
-        existingStock.setQuantity(existingStock.getQuantity() + 1);
+        existingStock.setQuantity(existingStock.getQuantity() + stock.getQuantity());
         currentSession.saveOrUpdate(user);
         return;
       }

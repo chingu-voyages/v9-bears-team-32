@@ -8,6 +8,7 @@ import './Dashboard.scss';
 
 function Dashboard(): JSX.Element {
   const globalContext: iContext = useContext(GlobalContext);
+  const { dispatch, state } = globalContext;
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -16,16 +17,16 @@ function Dashboard(): JSX.Element {
 
   const getUserDetails = async () =>  {
    const data = await getAjax('/user-details');
-   globalContext.dispatch({type: ACTION_TYPES.UPDATE_USER_DETAILS, payload: data.user});
+   dispatch({type: ACTION_TYPES.UPDATE_USER_DETAILS, payload: data.user});
    setMounted(true);
   }
 
   const renderStocks = (): JSX.Element => {
-    if(globalContext.state &&
-        globalContext.state.user &&
-        globalContext.state.user.stocks &&
-        globalContext.state.user.stocks.length) {
-      return <>{globalContext.state.user.stocks.map((stock: iStock, i: number) => <StockCard key={stock.symbol+i} stock={stock} /> )}</>
+    if(state &&
+        state.user &&
+        state.user.stocks &&
+        state.user.stocks.length) {
+      return <>{state.user.stocks.map((stock: iStock, i: number) => <StockCard key={stock.symbol+i} stock={stock} /> )}</>
     } else {
       return <h1 className="Dashboard__center">You haven't purchased any stocks yet.</h1>
     }
