@@ -21,6 +21,9 @@ $block: '.UserDetailsPanel';
 
 #{$block}__sell-btn {
   @include button($accentGreen);
+  &--wide {
+    width: 100px;
+  }
 }
 
 #{$block}__buy-btn {

@@ -7,11 +7,12 @@ import iStockInfo from '../../constants/types/iStockInfo';
 import iPurchaseRequestPayload from '../../constants/types/iPurchaseRequestPayload';
 import { ACTION_TYPES } from '../../context/GlobalContext/globalContextActions';
 import './UserDetailsPanel.scss';
-import { BuyModal } from '..';
+import { BuyModal, SellModal } from '..';
 
 function UserDetailsPanel(): JSX.Element {
   // Local state
   const [showBuyModal, setShowBuyModal] = useState<boolean>(false);
+  const [showSellModal, setShowSellModal] = useState<boolean>(true);
   const [stockSymbol, setStockSymbol] = useState<string>('');
   const [stockInfo, setStockInfo] = useState<iStockInfo | null>(null);
   const [quantity, setQuantity] = useState<number>(0);
@@ -97,6 +98,10 @@ function UserDetailsPanel(): JSX.Element {
         totalCost={totalCost}
       />
       }
+      {showSellModal &&
+      <SellModal
+        setShowSellModal={setShowSellModal}
+      />}
     </div>
   )
 }

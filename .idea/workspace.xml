@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="587605bc-b8c3-4142-a0fc-e58c3a3159f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/controller/ApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/components/StockCard/StockCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/components/StockCard/StockCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/components/UserDetailsPanel/UserDetailsPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/components/UserDetailsPanel/UserDetailsPanel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/context/GlobalContext/globalContextActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/context/GlobalContext/globalContextActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/context/GlobalContext/globalContextState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/context/GlobalContext/globalContextState.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/pages/Dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/src/main/resources/templates/src/pages/Dashboard/Dashboard.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="587605bc-b8c3-4142-a0fc-e58c3a3159f5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/stocks/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +45,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/dao/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
+            <state relative-caret-position="471">
               <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -194,7 +186,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="36" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
@@ -248,7 +240,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562466744655" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562533073583" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -543,7 +535,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stocks/src/main/java/com/chingu/stocks/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
+        <state relative-caret-position="471">
           <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="imports" expanded="true" />
