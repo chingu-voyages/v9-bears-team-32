@@ -9,4 +9,6 @@ public interface UserDAOInterface {
   public User findByUsername(String username);
 
   public void addStock(String username, Stock stock);
+
+  public void sellStock(String username, String symbol, Integer quantity, Double stockValue);
 }

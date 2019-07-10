@@ -105,4 +105,16 @@ public class ApiController {
     }
     return null;
   }
+
+  @PostMapping("/sell-stock")
+  public UserDTO sellingStock(HttpServletRequest request, Authentication authentication) throws IOException, JSONException {
+    String payloadString = Helpers.convertJsonToString(request.getInputStream());
+    JSONObject payloadJson = new JSONObject(payloadString);
+
+    if(payloadJson != null) {
+      userDao.sellStock(authentication.getName(), payloadJson.getString("symbol"), payloadJson.getInt("quantity"), payloadJson.getDouble("stockValue"));
+      return Helpers.getUserDetails(authentication.getName(), userDao);
+    }
+  }
+
 }

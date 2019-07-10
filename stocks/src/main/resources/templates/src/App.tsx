@@ -13,13 +13,11 @@ function App(): JSX.Element {
   const [state, dispatch] = useReducer<any>(globalContextReducer, globalContextState);
 
   return (
-    <>
-      <GlobalContext.Provider value={{state, dispatch}}>
-        <Router history={history}>
-          <Routes/>
-        </Router>
-      </GlobalContext.Provider>
-    </>
+    <GlobalContext.Provider value={{state, dispatch}}>
+      <Router history={history}>
+        <Routes/>
+      </Router>
+    </GlobalContext.Provider>
   )
 }
 

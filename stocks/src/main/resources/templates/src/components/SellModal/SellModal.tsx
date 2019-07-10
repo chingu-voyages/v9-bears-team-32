@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import Modal from '../Modal/Modal';
 import { iSellModal } from '../../constants/types';
 
-const SellModal: FC<iSellModal> = ({setShowSellModal}): JSX.Element => {
+const SellModal: FC<iSellModal> = ({setShowSellModal, sellStock, symbol, price}): JSX.Element => {
+  const [quantity, setQuantity] = useState(0);
   return (
     <Modal>
       <div className="UserDetailsPanel__buy-modal">
@@ -16,16 +17,18 @@ const SellModal: FC<iSellModal> = ({setShowSellModal}): JSX.Element => {
           </div>
         </div>
        <div className="UserDetailsPanel__buy-body">
-         <h3>AAPL</h3>
-         <h3>$202.32</h3>
+         <h3>{symbol}</h3>
+         <h3>{price}</h3>
          <h3>Quantity: </h3>
          <input
+          onChange={(e) => setQuantity(+e.target.value)}
           className="Global-input Global-input--modal"
           type="number"
          />
          <br />
          <br />
          <button
+          onClick={() => sellStock(quantity)}
           className="UserDetailsPanel__sell-btn UserDetailsPanel__sell-btn--wide"
           type="button"
         >
