@@ -15,8 +15,6 @@ import com.chingu.stocks.dto.UserDTO;
 import com.chingu.stocks.entity.Stock;
 import com.chingu.stocks.entity.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.hibernate.id.uuid.Helper;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -115,6 +113,8 @@ public class ApiController {
       userDao.sellStock(authentication.getName(), payloadJson.getString("symbol"), payloadJson.getInt("quantity"), payloadJson.getDouble("stockValue"));
       return Helpers.getUserDetails(authentication.getName(), userDao);
     }
+
+    return null;
   }
 
 }
