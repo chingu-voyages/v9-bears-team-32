@@ -1,60 +1,57 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import Chart from 'chart.js';
 import './StockGraph.scss';
+import GlobalContext from '../../context/GlobalContext';
+import { iStock } from '../../constants/types';
 
 function StockGraph(): JSX.Element {
+  const { state } = useContext(GlobalContext);
+  const [quantities, setQuantities] = useState<Array<number>>([]);
+  const [symbols, setSymbols] = useState<Array<string>>([]);
+  const [colors, setColors] = useState<Array<string>>([]);
+
   const ctxRef = React.createRef<HTMLCanvasElement>();
 
-    // dummy data to be replaced by state.
-    const data = [1220, 1500, 1430, 1800, 700,1900,2300];
-    const data2 = [1000, 1800, 1630, 1300, 1000,1800,2000];
-    const dates = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July"];
+    const randomColor = (): string => {
+      const randomHelper  = () => Math.round(Math.random()*255);
+      return `rgba(${randomHelper()},${randomHelper()},${randomHelper()},.5)`
+    }
 
-  useEffect(() => {
-    chartInit();
-  }, []);
+    useEffect(()=>{
+      const { stocks } = state.user;
+      const colorArr: Array<string> = []
+      const quantArr: Array<number> = stocks.map((stock: iStock) => stock.quantity);
+      const symArr: Array<string> = stocks.map((stock: iStock) => stock.symbol);
+      state.user.stocks.forEach((stock: iStock) => {
+        colorArr.push(randomColor());
+      });
+      setQuantities(quantArr);
+      setSymbols(symArr);
+      setColors(colorArr);
+    },[state.user.stocks])
+
+    useEffect(() => {
+      if(quantities.length) {
+        chartInit();
+      }
+    }, [quantities])
 
   const chartInit = () => {
     new Chart(ctxRef.current.getContext('2d'), {
-      type: 'line',
+      type: 'bar',
       data: {
-      labels: dates,
+      labels: symbols,
       datasets: [{
-        label: "Total Worth",
-        fill: true,
-        borderColor: '#edad29',
-        borderWidth: 1,
-        pointRadius: 2,
-        backgroundColor: 'rgba(237, 128, 41, 0.2)',
-        data: data,
-      },
-      {
-        label: "Stock 1",
-        fill: true,
-        borderColor: '#1346a3',
-        borderWidth: 1,
-        pointRadius: 2,
-        backgroundColor: 'rgba(19, 70, 163, 0.2)',
-        data: data2,
+        label: 'Stocks',
+        backgroundColor: colors,
+        data: quantities,
       }]
+    },
+  options: {
+      legend: {
+        display: false
       },
-      options: {
-        legend: {
-          labels: {
-            boxWidth: 12
-          }
-        },
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            },
-            gridLines: {
-              display: true
-            },
-          }]
-        }
-      }
+    }
     });
   }
 
